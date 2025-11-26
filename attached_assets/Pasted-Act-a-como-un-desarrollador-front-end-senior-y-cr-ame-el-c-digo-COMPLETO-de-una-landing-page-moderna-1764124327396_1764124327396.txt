@@ -1,0 +1,118 @@
+Actúa como un desarrollador front-end senior y créame el código COMPLETO de una landing page moderna y responsiva para una marca llamada PORTOVA.
+
+Contexto de la marca:
+PORTOVA es una importadora premium que trae productos originales de alta calidad desde Estados Unidos a Colombia. Categorías: tecnología, audio, gadgets, lifestyle, belleza, moda y utilidades. Estilo de la marca: lujo moderno, tech, confiable, inspirado en Tesla / Apple / Dyson.
+
+Requerimientos técnicos:
+
+Usa HTML5 + CSS3 + JavaScript puro (sin frameworks pesados).
+
+Código organizado en un solo proyecto con: index.html, styles.css y app.js.
+
+La página debe ser 100% responsive (mobile-first) y verse muy bien en celular.
+
+Usa una fuente sans-serif elegante tipo Poppins / Inter / similar desde Google Fonts.
+
+Estilo visual:
+
+Paleta principal: verde esmeralda y negro, con grises oscuros y blanco como apoyo.
+
+Estética de lujo moderno tech: fondos oscuros, degradados sutiles, sombras suaves, bordes redondeados.
+
+Incluir espacio donde se pueda colocar el logo de PORTOVA (simula un rectángulo o texto por ahora).
+
+Secciones que debe incluir la landing page (en este orden):
+
+Navbar fija
+
+Logo “PORTOVA” a la izquierda.
+
+Menú con anclas: Inicio, Sobre Nosotros, Categorías, Productos Destacados, Cómo funciona, Testimonios, Contacto.
+
+Hero principal (Inicio)
+
+Fondo oscuro con un degradado en verde esmeralda.
+
+Título grande: “PORTOVA · Premium Tech & Lifestyle Imports”.
+
+Subtítulo explicando: “Importamos tecnología, audio, gadgets y lifestyle originales de USA a Colombia, con precios justos y total confianza.”
+
+Botón principal: “Ver productos” (scroll a sección de productos).
+
+Botón secundario: “Escríbenos por WhatsApp” (link placeholder).
+
+Sección “Sobre PORTOVA”
+
+Breve texto de quiénes somos, enfoque en originalidad, garantía, importación directa.
+
+Tres íconos o cards con bullets: “Productos originales”, “Importación USA→Colombia”, “Atención personalizada”.
+
+Sección “Categorías”
+
+Grid con cards para: Tecnología/Audio, Lifestyle, Belleza, Moda, Motos & Gadgets, Utilidades.
+
+Cada card debe tener ícono, título y breve descripción.
+
+Sección “Productos destacados”
+
+Cards de producto tipo tienda (al menos 6):
+
+Beats Fit Pro (1st Gen)
+
+Beats Studio3
+
+JBL Charge 5
+
+Cada card debe tener: nombre, categoría, breve descripción, precio de ejemplo en COP, y botón “Quiero este”.
+
+Sección “Cómo funciona”
+
+Explicar en 4 pasos visuales el flujo:
+
+PORTOVA compra en USA
+
+Verificación de originalidad
+
+Envío seguro a Colombia
+
+Entrega al cliente
+
+Mostrar estos pasos en un timeline o en cards numeradas.
+
+Sección “Testimonios”
+
+3 cards con testimonios ficticios de clientes satisfechos.
+
+Sección “CTA de contacto”
+
+Fondo con degradado en verde esmeralda.
+
+Texto: “¿Quieres reservar tu próximo producto importado?”
+
+Botón grande: “Contáctanos por WhatsApp” y debajo un pequeño formulario con nombre, email y mensaje (sin backend, solo frontend).
+
+Footer
+
+Incluir:
+
+Logo o texto PORTOVA.
+
+Texto corto de derechos de autor.
+
+Links dummy a Instagram / WhatsApp / TikTok.
+
+Detalles de UX/UI:
+
+Usa hover effects suaves en botones y cards (cambio de escala o brillo).
+
+Usa scroll suave al hacer clic en los links del navbar.
+
+Mantén un look muy limpio, con bastante espacio en blanco (o negro) y tipografía clara.
+
+Asegúrate de que los botones principales tengan buen contraste (verde esmeralda sobre fondo oscuro o blanco).
+
+Entrega:
+
+Genera el código completo y funcional listo para ejecutar en un proyecto de Replit.
+
+Comenta partes importantes del código para que pueda entender fácilmente cada sección.
