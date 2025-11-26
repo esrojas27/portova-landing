@@ -7,7 +7,11 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div className="mb-6 md:mb-0 text-center md:text-left">
             <a href="#" className="text-2xl font-bold tracking-tighter text-white flex items-center gap-2 justify-center md:justify-start">
-              <span className="bg-primary text-black px-2 py-1 rounded-sm">P</span>
+              <img
+                  src="/portova-logo-no-background.png"
+                  alt="Portova logo"
+                  className="h-15 w-auto drop-shadow-lg"
+                />
               PORTOVA
             </a>
             <p className="text-gray-500 text-sm mt-2">Premium Tech & Lifestyle Imports</p>

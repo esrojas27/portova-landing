@@ -36,9 +36,13 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="text-2xl font-bold tracking-tighter text-white flex items-center gap-2">
-          <span className="bg-primary text-black px-2 py-1 rounded-sm">P</span>
-          PORTOVA
+        <a href="#" className="flex items-center gap-3 text-white">
+          <img
+            src="/portova-logo-no-background.png"
+            alt="Portova logo"
+            className="h-15 w-auto drop-shadow-lg"
+          />
+          <span className="text-2xl font-bold tracking-tighter">PORTOVA</span>
         </a>
 
         {/* Desktop Menu */}
