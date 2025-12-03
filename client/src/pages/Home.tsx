@@ -9,13 +9,14 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export default function Home() {
+  const SHOW_CATEGORIES = false; // mantener la sección para futuro uso sin mostrarla ahora
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <main>
         <Hero />
         <About />
-        <Categories />
+        {SHOW_CATEGORIES && <Categories />}
         <FeaturedProducts />
         <HowItWorks />
         <Testimonials />

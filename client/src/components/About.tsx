@@ -33,13 +33,16 @@ export default function About() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <Card key={index} className="bg-card/50 border-white/5 hover:border-primary/30 transition-colors duration-300">
+            <Card
+              key={index}
+              className="silver-card relative overflow-hidden transition-transform duration-300 hover:-translate-y-2"
+            >
               <CardContent className="p-8 text-center flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
-                  <feature.icon className="w-8 h-8 text-primary" />
+                <div className="icon-badge w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                  <feature.icon className="w-8 h-8 text-primary drop-shadow-md" />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
-                <p className="text-gray-400 leading-relaxed">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">{feature.title}</h3>
+                <p className="text-slate-700 leading-relaxed">
                   {feature.description}
                 </p>
               </CardContent>
