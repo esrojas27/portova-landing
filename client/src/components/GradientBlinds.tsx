@@ -65,6 +65,7 @@ const GradientBlinds: React.FC<GradientBlindsProps> = ({
   const rendererRef = useRef<Renderer | null>(null);
   const mouseTargetRef = useRef<[number, number]>([0, 0]);
   const lastTimeRef = useRef<number>(0);
+  const lastPointerTimeRef = useRef<number>(0);
   const firstResizeRef = useRef<boolean>(true);
 
   useEffect(() => {
@@ -262,6 +263,7 @@ void main() {
     const defaultY = gl.drawingBufferHeight / 2 || 0.5;
     uniforms.iMouse.value = [defaultX, defaultY];
     mouseTargetRef.current = [defaultX, defaultY];
+    lastPointerTimeRef.current = performance.now();
 
     const program = new Program(gl, {
       vertex,
@@ -308,6 +310,7 @@ void main() {
       const x = (e.clientX - rect.left) * scale;
       const y = (rect.height - (e.clientY - rect.top)) * scale;
       mouseTargetRef.current = [x, y];
+      lastPointerTimeRef.current = performance.now();
       if (mouseDampening <= 0) {
         uniforms.iMouse.value = [x, y];
       }
@@ -316,7 +319,25 @@ void main() {
 
     const loop = (t: number) => {
       rafRef.current = requestAnimationFrame(loop);
+      const nowMs = performance.now();
       uniforms.iTime.value = t * 0.001;
+
+      // Idle drift: move spotlight suavemente cuando no hay mouse en escena.
+      const idleDelayMs = 2000;
+      const isIdle = nowMs - lastPointerTimeRef.current > idleDelayMs;
+      if (isIdle) {
+        const idleAmpX = gl.drawingBufferWidth * 0.08;
+        const idleAmpY = gl.drawingBufferHeight * 0.08;
+        const cx = gl.drawingBufferWidth / 2;
+        const cy = gl.drawingBufferHeight / 2;
+        const phaseX = Math.sin(uniforms.iTime.value * 0.4);
+        const phaseY = Math.cos(uniforms.iTime.value * 0.35);
+        mouseTargetRef.current = [
+          cx + phaseX * idleAmpX,
+          cy + phaseY * idleAmpY,
+        ];
+      }
+
       if (mouseDampening > 0) {
         if (!lastTimeRef.current) lastTimeRef.current = t;
         const dt = (t - lastTimeRef.current) / 1000;
@@ -331,6 +352,7 @@ void main() {
       } else {
         lastTimeRef.current = t;
       }
+
       if (!paused && programRef.current && meshRef.current) {
         try {
           renderer.render({ scene: meshRef.current });

@@ -6,7 +6,7 @@ import beatsFitPro_01 from "@assets/generated_images/BeatsFitPro1.png";
 import beatsFitPro_02 from "@assets/generated_images/BeatsFitPro2.png";
 import beatsStudio3_01 from "@assets/generated_images/BeatsStudio3-01.png";
 import beatsStudio3_02 from "@assets/generated_images/BeatsStudio3-02.jpg";
-import jblCharge01 from "@assets/generated_images/jblCharge5-1.jpg";
+import jblCharge01 from "@assets/generated_images/jblCharge5-1.png";
 
 // Usamos las imágenes generadas; ahora cada producto tiene un arreglo de imágenes
 const products = [
@@ -227,19 +227,19 @@ export default function FeaturedProducts() {
       </div>
 
       {activeProduct && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 px-4">
-          <div className="relative w-full max-w-5xl bg-background border border-white/10 rounded-3xl shadow-2xl overflow-hidden max-h-[80vh]">
+        <div className="fixed inset-0 z-50 flex items-start md:items-center justify-center bg-black/80 px-4 py-8 overflow-y-auto">
+          <div className="relative w-full max-w-5xl bg-background border border-white/10 rounded-3xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
             <button
               aria-label="Cerrar"
-              className="absolute top-4 right-4 h-10 w-10 rounded-full bg-white/10 border border-white/20 text-white flex items-center justify-center hover:bg-white/20 transition"
+              className="absolute top-4 right-4 h-10 w-10 rounded-full bg-black/50 border border-white/40 shadow-lg shadow-black/40 text-white flex items-center justify-center hover:bg-black/70 transition z-10"
               onClick={closeModal}
             >
               <X className="h-5 w-5" />
             </button>
 
-            <div className="grid md:grid-cols-2 md:h-[80vh]">
-              <div className="relative h-full">
-                <div className="h-full bg-black">
+            <div className="grid md:grid-cols-2 flex-1 overflow-hidden">
+              <div className="relative w-full h-full">
+                <div className="aspect-[4/5] md:h-full bg-black">
                   {renderCarousel(activeProduct.id, activeProduct.images, "modal")}
                 </div>
               </div>
