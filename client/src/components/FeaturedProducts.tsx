@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import earbudsImg from "@assets/generated_images/premium_wireless_earbuds_product_shot.png";
-import headphonesImg from "@assets/generated_images/premium_over-ear_headphones_product_shot.png";
+import headphonesImg from "@assets/generated_images/BeatsStudio3-01.png";
 import speakerImg from "@assets/generated_images/portable_bluetooth_speaker_product_shot.png";
 
 // Using generated images for the first 3, repeating for others just for demo layout
