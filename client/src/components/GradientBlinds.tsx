@@ -323,15 +323,17 @@ void main() {
       uniforms.iTime.value = t * 0.001;
 
       // Idle drift: move spotlight suavemente cuando no hay mouse en escena.
-      const idleDelayMs = 2000;
+      const idleDelayMs = 1200;
       const isIdle = nowMs - lastPointerTimeRef.current > idleDelayMs;
       if (isIdle) {
-        const idleAmpX = gl.drawingBufferWidth * 0.08;
-        const idleAmpY = gl.drawingBufferHeight * 0.08;
+        const idleAmpX = gl.drawingBufferWidth * 0.12;
+        const idleAmpY = gl.drawingBufferHeight * 0.12;
         const cx = gl.drawingBufferWidth / 2;
         const cy = gl.drawingBufferHeight / 2;
-        const phaseX = Math.sin(uniforms.iTime.value * 0.4);
-        const phaseY = Math.cos(uniforms.iTime.value * 0.35);
+        // Lissajous para trazar un “infinito” suave.
+        const tSec = uniforms.iTime.value;
+        const phaseX = Math.sin(tSec * 0.6);
+        const phaseY = Math.sin(tSec * 1.2) * Math.cos(tSec * 0.2);
         mouseTargetRef.current = [
           cx + phaseX * idleAmpX,
           cy + phaseY * idleAmpY,
