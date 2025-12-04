@@ -18,12 +18,15 @@ export default function Navbar() {
   const navLinks = [
     { name: "Inicio", href: "#inicio" },
     { name: "Sobre Nosotros", href: "#sobre-nosotros" },
-    { name: "Categorías", href: "#categorias" },
+    { name: "CategorA-as", href: "#categorias" },
     { name: "Destacados", href: "#productos" },
-    { name: "Cómo funciona", href: "#como-funciona" },
+    { name: "CA3mo funciona", href: "#como-funciona" },
     { name: "Testimonios", href: "#testimonios" },
     { name: "Contacto", href: "#contacto" },
   ];
+
+  // Use Vite base URL so the logo works under GitHub Pages subpaths.
+  const logoSrc = `${import.meta.env.BASE_URL}portova-logo-no-background.png`;
 
   return (
     <nav
@@ -38,7 +41,7 @@ export default function Navbar() {
         {/* Logo */}
         <a href="#" className="flex items-center gap-3 text-white">
           <img
-            src="/portova-logo-no-background.png"
+            src={logoSrc}
             alt="Portova logo"
             className="h-15 w-auto drop-shadow-lg"
           />
