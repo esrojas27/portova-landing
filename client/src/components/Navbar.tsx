@@ -18,8 +18,8 @@ export default function Navbar() {
   const navLinks = [
     { name: "Inicio", href: "#inicio" },
     { name: "Sobre Nosotros", href: "#sobre-nosotros" },
-    { name: "Categorías", href: "#categorias" },
-    { name: "Destacados", href: "#productos" },
+    //{ name: "Categorías", href: "#categorias" },
+    { name: "Productos", href: "#productos" },
     { name: "Cómo funciona", href: "#como-funciona" },
     { name: "Testimonios", href: "#testimonios" },
     { name: "Contacto", href: "#contacto" },
