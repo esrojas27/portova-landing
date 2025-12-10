@@ -16,8 +16,18 @@ export default function Contact() {
               <p className="text-gray-300 mb-8 text-lg">
                 Escríbenos directamente y te ayudaremos a encontrar lo que buscas con la mejor asesoría.
               </p>
-              <Button size="lg" className="w-full md:w-auto bg-[#25D366] hover:bg-[#20BD5C] text-white font-bold rounded-full h-14 text-lg">
-                <MessageCircle className="mr-2 h-5 w-5" /> Contáctanos por WhatsApp
+              <Button
+                size="lg"
+                className="w-full md:w-auto bg-[#25D366] hover:bg-[#20BD5C] text-white font-bold rounded-full h-14 text-lg"
+                asChild
+              >
+                <a
+                  href="https://wa.me/573209636039?text=Hola%2C%20encontre%20PORTOVA%20y%20quiero%20mas%20informacion%20sobre%20los%20productos%20disponibles%2C%20precios%20y%20formas%20de%20pago."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <MessageCircle className="mr-2 h-5 w-5" /> Contáctanos por WhatsApp
+                </a>
               </Button>
             </div>
 

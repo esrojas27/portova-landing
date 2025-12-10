@@ -52,19 +52,26 @@ export default function Hero() {
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Button 
-              size="lg" 
+              size="lg"
               className="bg-primary hover:bg-primary/90 text-black font-semibold text-md h-12 px-8 rounded-full transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30 cursor-pointer"
               onClick={() => document.getElementById('productos')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Ver productos <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             
-            <Button 
-              variant="outline" 
-              size="lg" 
+            <Button
+              variant="outline"
+              size="lg"
               className="border-white/20 bg-white/5 hover:bg-white/10 text-white h-12 px-8 rounded-full backdrop-blur-sm"
+              asChild
             >
-              Escríbenos por WhatsApp <MessageCircle className="ml-2 h-4 w-4" />
+              <a
+                href="https://wa.me/573209636039?text=Hola%2C%20encontre%20PORTOVA%20y%20quiero%20mas%20informacion%20sobre%20los%20productos%20disponibles%2C%20precios%20y%20formas%20de%20pago."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Escríbenos por WhatsApp <MessageCircle className="ml-2 h-4 w-4" />
+              </a>
             </Button>
           </div>
         </motion.div>
