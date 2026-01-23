@@ -26,24 +26,23 @@ export default function Footer() {
           </div>
 
           <div className="flex gap-6">
-            <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+            <a
+              href="https://www.instagram.com/portova.col"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-primary transition-colors"
+            >
               <Instagram className="w-6 h-6" />
             </a>
-            <a href="#" className="text-gray-400 hover:text-primary transition-colors">
-              <Facebook className="w-6 h-6" />
-            </a>
-            <a href="#" className="text-gray-400 hover:text-primary transition-colors">
-              <Twitter className="w-6 h-6" />
-            </a>
+            {/* Social links hidden until they are ready */}
           </div>
         </div>
 
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
           <p>&copy; {new Date().getFullYear()} PORTOVA. Todos los derechos reservados.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white transition-colors">TAcrminos</a>
-            <a href="#" className="hover:text-white transition-colors">Privacidad</a>
-            <a href="#" className="hover:text-white transition-colors">EnvA-os</a>
+            <a href="/terminos" className="hover:text-white transition-colors">Términos</a>
+            <a href="/privacidad" className="hover:text-white transition-colors">Privacidad</a>
           </div>
         </div>
       </div>

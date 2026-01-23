@@ -3,10 +3,21 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import beatsFitPro_01 from "@assets/generated_images/BeatsFitPro1.png";
-import beatsFitPro_02 from "@assets/generated_images/BeatsFitPro2.png";
-import beatsStudio3_01 from "@assets/generated_images/BeatsStudio3-01.png";
-import beatsStudio3_02 from "@assets/generated_images/BeatsStudio3-02.jpg";
+import beatsFitPro_02 from "@assets/generated_images/BeatsFitPro2.jpg";
+import beatsFitPro_03 from "@assets/generated_images/BeatsFitPro3.jpg";
+import beatsFitPro_04 from "@assets/generated_images/BeatsFitPro4.jpg";
+import beatsFitPro_05 from "@assets/generated_images/BeatsFitPro5.jpg";
+import beatsStudio3_02 from "@assets/generated_images/BeatsStudio3-1.jpg";
+import beatsStudio3_03 from "@assets/generated_images/BeatsStudio3-3.jpg";
+import beatsStudio3_04 from "@assets/generated_images/BeatsStudio3-4.png";
+import beatsStudio3_05 from "@assets/generated_images/BeatsStudio3-5.png";
+import beatsStudio3_06 from "@assets/generated_images/BeatsStudio3-6.png";
+import beatsStudio3_07 from "@assets/generated_images/BeatsStudio3-7.png";
 import jblCharge01 from "@assets/generated_images/jblCharge5-1.png";
+import jblCharge03 from "@assets/generated_images/jblCharge5-3.png";
+import jblCharge04 from "@assets/generated_images/jblCharge5-4.png";
+import jblCharge05 from "@assets/generated_images/jblCharge5-5.png";
+import jblCharge06 from "@assets/generated_images/jblCharge5-6.png";
 
 type Product = {
   id: number;
@@ -25,8 +36,14 @@ const products: Product[] = [
     id: 1,
     name: "Beats Fit Pro (1st Gen)",
     category: "DROP 01 · AUDIO & TECH",
-    price: "$790.000 COP",
-    images: [beatsFitPro_01, beatsFitPro_02],
+    price: "$829.000 COP",
+    images: [
+      beatsFitPro_01,
+      beatsFitPro_02,
+      beatsFitPro_03,
+      beatsFitPro_04,
+      beatsFitPro_05,
+    ],
     description: "Audífonos in-ear deportivos con cancelación activa de ruido, ajuste seguro y hasta 24 h de batería con estuche.",
     features: [
       "Tipo: audífonos in-ear true wireless",
@@ -44,8 +61,15 @@ const products: Product[] = [
     id: 2,
     name: "Beats Studio3 Wireless",
     category: "DROP 01 · AUDIO & TECH",
-    price: "$800.000 COP",
-    images: [beatsStudio3_02, beatsStudio3_01],
+    price: "$855.000 COP",
+    images: [
+      beatsStudio3_02,
+      beatsStudio3_03,
+      beatsStudio3_04,
+      beatsStudio3_05,
+      beatsStudio3_06,
+      beatsStudio3_07,
+    ],
     description: "Audífonos over-ear inalámbricos con cancelación de ruido Pure ANC, chip Apple W1 y hasta 22 h de batería con ANC",
     features: [
       "Tipo: audífonos over-ear inalámbricos plegables",
@@ -62,8 +86,14 @@ const products: Product[] = [
     id: 3,
     name: "JBL Charge 5",
     category: "DROP 01 · AUDIO & TECH",
-    price: "$600.000 COP",
-    images: [jblCharge01, beatsStudio3_01],
+    price: "$650.000 COP",
+    images: [
+      jblCharge01,
+      jblCharge03,
+      jblCharge04,
+      jblCharge05,
+      jblCharge06,
+    ],
     description: "Sonido JBL Original Pro, hasta 20 h de batería, resistencia IP67 y powerbank integrado",
     features: [
       "Tipo: parlante Bluetooth portátil con función powerbank",
@@ -108,6 +138,11 @@ export default function FeaturedProducts() {
   const closeModal = () => setOpenProductId(null);
 
   const activeProduct = openProductId ? productMap[openProductId] : null;
+
+  const getWhatsAppLink = (productName: string) => {
+    const text = `Quiero obtener más información de los ${productName}.`;
+    return `https://wa.me/573209636039?text=${encodeURIComponent(text)}`;
+  };
 
   useEffect(() => {
     // Reinicia el estado de descripción al cambiar de producto/abrir modal
@@ -191,7 +226,7 @@ export default function FeaturedProducts() {
             </p>
           </div>
           <Button variant="link" className="text-primary hidden md:flex">
-            Ver todo el catA­logo
+            Ver todo el catálogo
           </Button>
         </div>
 
@@ -246,7 +281,7 @@ export default function FeaturedProducts() {
 
         <div className="mt-8 text-center md:hidden">
           <Button variant="link" className="text-primary">
-            Ver todo el catA­logo
+            Ver todo el catálogo
           </Button>
         </div>
       </div>
@@ -307,8 +342,17 @@ export default function FeaturedProducts() {
                   </div>
                 )}
 
-                <Button className="w-full md:w-auto bg-primary text-black font-semibold rounded-full px-8 h-12">
-                  Agregar al carrito
+                <Button
+                  className="w-full md:w-auto bg-primary text-black font-semibold rounded-full px-8 h-12"
+                  asChild
+                >
+                  <a
+                    href={getWhatsAppLink(activeProduct.name)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Preguntar por producto
+                  </a>
                 </Button>
               </div>
             </div>

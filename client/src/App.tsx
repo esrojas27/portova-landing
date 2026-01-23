@@ -5,6 +5,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
+import Terms from "@/pages/Terms";
+import Privacy from "@/pages/Privacy";
 
 // Detect base path for GitHub Pages project sites (e.g. /repo-name/) so routing works there.
 const basePath = window.location.hostname.endsWith("github.io")
@@ -14,7 +16,13 @@ const basePath = window.location.hostname.endsWith("github.io")
 function AppRoutes() {
   return (
     <Switch>
-      <Route path="/" component={Home}/>
+      <Route path="/" component={Home} />
+      <Route path="/sobre-nosotros" component={Home} />
+      <Route path="/productos" component={Home} />
+      <Route path="/como-funciona" component={Home} />
+      <Route path="/contacto" component={Home} />
+      <Route path="/terminos" component={Terms} />
+      <Route path="/privacidad" component={Privacy} />
       <Route component={NotFound} />
     </Switch>
   );

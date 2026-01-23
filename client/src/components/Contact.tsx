@@ -2,8 +2,52 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MessageCircle } from "lucide-react";
+import { useState } from "react";
 
 export default function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [touchedName, setTouchedName] = useState(false);
+  const [touchedEmail, setTouchedEmail] = useState(false);
+  const [touchedMessage, setTouchedMessage] = useState(false);
+
+  const isEmailValid = (value: string) =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+
+  const trimmedName = name.trim();
+  const trimmedEmail = email.trim();
+  const trimmedMessage = message.trim();
+
+  const isFormValid =
+    trimmedName.length > 0 &&
+    trimmedMessage.length > 0 &&
+    isEmailValid(trimmedEmail);
+
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+
+    if (!isFormValid) return;
+
+    const lines = [
+      "Hola, encontré PORTOVA y quiero más información sobre los productos disponibles, precios y formas de pago.",
+      trimmedName ? `Nombre: ${trimmedName}` : undefined,
+      trimmedEmail ? `Email: ${trimmedEmail}` : undefined,
+      trimmedMessage ? `Mensaje/Producto: ${trimmedMessage}` : undefined,
+    ].filter(Boolean);
+
+    const text = encodeURIComponent(lines.join("\n"));
+    const url = `https://wa.me/573209636039?text=${text}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+
+    setName("");
+    setEmail("");
+    setMessage("");
+    setTouchedName(false);
+    setTouchedEmail(false);
+    setTouchedMessage(false);
+  };
   return (
     <section id="contacto" className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-background z-0" />
@@ -22,7 +66,7 @@ export default function Contact() {
                 asChild
               >
                 <a
-                  href="https://wa.me/573209636039?text=Hola%2C%20encontre%20PORTOVA%20y%20quiero%20mas%20informacion%20sobre%20los%20productos%20disponibles%2C%20precios%20y%20formas%20de%20pago."
+                  href="https://wa.me/573209636039?text=Hola%2C%20encontr%C3%A9%20PORTOVA%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20productos%20disponibles%2C%20precios%20y%20formas%20de%20pago."
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -33,11 +77,46 @@ export default function Contact() {
 
             <div className="bg-black/20 p-6 rounded-2xl border border-white/5">
               <h3 className="text-lg font-semibold text-white mb-4">O déjanos un mensaje</h3>
-              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                <Input placeholder="Tu Nombre" className="bg-background/50 border-white/10 text-white placeholder:text-gray-500" />
-                <Input type="email" placeholder="Tu Email" className="bg-background/50 border-white/10 text-white placeholder:text-gray-500" />
-                <Textarea placeholder="¿Qué producto estás buscando?" className="bg-background/50 border-white/10 text-white placeholder:text-gray-500 min-h-[100px]" />
-                <Button type="submit" className="w-full bg-primary text-black font-bold hover:bg-primary/90">
+              <form className="space-y-4" onSubmit={handleSubmit}>
+                <Input
+                  placeholder="Tu Nombre"
+                  value={name}
+                  onChange={(event) => setName(event.target.value)}
+                  onBlur={() => setTouchedName(true)}
+                  className={`bg-background/50 text-white placeholder:text-gray-500 ${
+                    touchedName && trimmedName.length === 0
+                      ? "border-red-500/70 focus-visible:ring-red-500/60"
+                      : "border-white/10"
+                  }`}
+                />
+                <Input
+                  type="email"
+                  placeholder="Tu Email"
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                  onBlur={() => setTouchedEmail(true)}
+                  className={`bg-background/50 text-white placeholder:text-gray-500 ${
+                    !touchedEmail || trimmedEmail.length === 0 || isEmailValid(trimmedEmail)
+                      ? "border-white/10"
+                      : "border-red-500/70 focus-visible:ring-red-500/60"
+                  }`}
+                />
+                <Textarea
+                  placeholder="¿Qué producto estás buscando?"
+                  value={message}
+                  onChange={(event) => setMessage(event.target.value)}
+                  onBlur={() => setTouchedMessage(true)}
+                  className={`bg-background/50 text-white placeholder:text-gray-500 min-h-[100px] ${
+                    touchedMessage && trimmedMessage.length === 0
+                      ? "border-red-500/70 focus-visible:ring-red-500/60"
+                      : "border-white/10"
+                  }`}
+                />
+                <Button
+                  type="submit"
+                  disabled={!isFormValid}
+                  className="w-full bg-primary text-black font-bold hover:bg-primary/90 disabled:opacity-50 disabled:pointer-events-none"
+                >
                   Enviar Mensaje
                 </Button>
               </form>

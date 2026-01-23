@@ -16,13 +16,13 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Inicio", href: "#inicio" },
-    { name: "Sobre Nosotros", href: "#sobre-nosotros" },
-    //{ name: "Categorías", href: "#categorias" },
-    { name: "Productos", href: "#productos" },
-    { name: "Cómo funciona", href: "#como-funciona" },
-    { name: "Testimonios", href: "#testimonios" },
-    { name: "Contacto", href: "#contacto" },
+    { name: "Inicio", href: "/" },
+    { name: "Sobre Nosotros", href: "/sobre-nosotros" },
+    //{ name: "Categorías", href: "/categorias" },
+    { name: "Productos", href: "/productos" },
+    { name: "Cómo funciona", href: "/como-funciona" },
+    //{ name: "Testimonios", href: "/testimonios" },
+    { name: "Contacto", href: "/contacto" },
   ];
 
   // Use Vite base URL so the logo works under GitHub Pages subpaths.
@@ -39,7 +39,7 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-3 text-white">
+        <a href="/" className="flex items-center gap-3 text-white">
           <img
             src={logoSrc}
             alt="Portova logo"

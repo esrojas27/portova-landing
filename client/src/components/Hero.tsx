@@ -66,7 +66,7 @@ export default function Hero() {
               asChild
             >
               <a
-                href="https://wa.me/573209636039?text=Hola%2C%20encontre%20PORTOVA%20y%20quiero%20mas%20informacion%20sobre%20los%20productos%20disponibles%2C%20precios%20y%20formas%20de%20pago."
+                href="https://wa.me/573209636039?text=Hola%2C%20encontr%C3%A9%20PORTOVA%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20productos%20disponibles%2C%20precios%20y%20formas%20de%20pago."
                 target="_blank"
                 rel="noopener noreferrer"
               >
