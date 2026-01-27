@@ -24,6 +24,7 @@ type Product = {
   name: string;
   category: string;
   price: string;
+  discountPrice: string;
   images: string[];
   description: string;
   features: string[];
@@ -37,6 +38,7 @@ const products: Product[] = [
     name: "Beats Fit Pro (1st Gen)",
     category: "DROP 01 · AUDIO & TECH",
     price: "$829.000 COP",
+    discountPrice: "$750.000 COP",
     images: [
       beatsFitPro_01,
       beatsFitPro_02,
@@ -62,6 +64,7 @@ const products: Product[] = [
     name: "Beats Studio3 Wireless",
     category: "DROP 01 · AUDIO & TECH",
     price: "$855.000 COP",
+    discountPrice: "$770.000 COP",
     images: [
       beatsStudio3_02,
       beatsStudio3_03,
@@ -87,6 +90,7 @@ const products: Product[] = [
     name: "JBL Charge 5",
     category: "DROP 01 · AUDIO & TECH",
     price: "$650.000 COP",
+    discountPrice: "$600.000 COP",
     images: [
       jblCharge01,
       jblCharge03,
@@ -261,9 +265,12 @@ export default function FeaturedProducts() {
                 <p className="text-gray-400 text-sm mb-4 line-clamp-2">
                   {product.description}
                 </p>
-                <div className="flex items-center justify-between">
-                  <span className="text-lg font-semibold text-white">
+                <div className="flex flex-col items-start">
+                  <span className="text-sm font-medium text-gray-500 line-through">
                     {product.price}
+                  </span>
+                  <span className="text-lg font-semibold text-white">
+                    {product.discountPrice}
                   </span>
                 </div>
               </CardContent>
@@ -277,12 +284,6 @@ export default function FeaturedProducts() {
               </CardFooter>
             </Card>
           ))}
-        </div>
-
-        <div className="mt-8 text-center md:hidden">
-          <Button variant="link" className="text-primary">
-            Ver todo el catálogo
-          </Button>
         </div>
       </div>
 
@@ -312,9 +313,14 @@ export default function FeaturedProducts() {
                   <h3 className="text-2xl font-bold text-white leading-tight">
                     {activeProduct.name}
                   </h3>
-                  <p className="text-lg font-semibold text-white mt-2">
-                    {activeProduct.price}
-                  </p>
+                  <div className="mt-2 flex flex-col items-start">
+                    <span className="text-base font-medium text-gray-500 line-through">
+                      {activeProduct.price}
+                    </span>
+                    <span className="text-xl font-bold text-white">
+                      {activeProduct.discountPrice}
+                    </span>
+                  </div>
                 </div>
 
                 <div className="space-y-2">

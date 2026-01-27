@@ -62,15 +62,17 @@ export default function Contact() {
               </p>
               <Button
                 size="lg"
-                className="w-full md:w-auto bg-[#25D366] hover:bg-[#20BD5C] text-white font-bold rounded-full h-14 text-lg"
+                className="w-full md:w-auto bg-[#25D366] hover:bg-[#20BD5C] text-white font-bold rounded-full h-auto py-4 text-base md:text-lg whitespace-normal"
                 asChild
               >
                 <a
                   href="https://wa.me/573209636039?text=Hola%2C%20encontr%C3%A9%20PORTOVA%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20productos%20disponibles%2C%20precios%20y%20formas%20de%20pago."
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="flex items-center justify-center"
                 >
-                  <MessageCircle className="mr-2 h-5 w-5" /> Contáctanos por WhatsApp
+                  <MessageCircle className="mr-2 h-5 w-5 flex-shrink-0" />
+                  <span>Contáctanos por WhatsApp</span>
                 </a>
               </Button>
             </div>
