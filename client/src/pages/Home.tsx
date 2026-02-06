@@ -17,8 +17,8 @@ export default function Home() {
 
   useEffect(() => {
     const pathToSection: Record<string, string> = {
-      "/sobre-nosotros": "sobre-nosotros",
       "/productos": "productos",
+      "/sobre-nosotros": "sobre-nosotros",
       "/como-funciona": "como-funciona",
       "/contacto": "contacto",
     };
@@ -37,9 +37,9 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <FeaturedProducts />
         <About />
         {SHOW_CATEGORIES && <Categories />}
-        <FeaturedProducts />
         <HowItWorks />
         {SHOW_TESTIMONIALS && <Testimonials />}
         <Contact />
