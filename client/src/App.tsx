@@ -7,6 +7,7 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import Terms from "@/pages/Terms";
 import Privacy from "@/pages/Privacy";
+import PaymentSuccess from "@/pages/PaymentSuccess";
 
 // Detect base path for GitHub Pages project sites (e.g. /repo-name/) so routing works there.
 const basePath = window.location.hostname.endsWith("github.io")
@@ -23,6 +24,7 @@ function AppRoutes() {
       <Route path="/contacto" component={Home} />
       <Route path="/terminos" component={Terms} />
       <Route path="/privacidad" component={Privacy} />
+      <Route path="/pago-completado-wp" component={PaymentSuccess} />
       <Route component={NotFound} />
     </Switch>
   );
