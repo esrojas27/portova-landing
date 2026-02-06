@@ -59,7 +59,7 @@ const products: Product[] = [
     ],
     longDescription:
       "Beats Fit Pro ofrecen cancelación activa de ruido con modo Transparencia y audio espacial para una experiencia inmersiva en deporte y uso diario. Integran chip Apple H1 para emparejamiento estable y funciones avanzadas en dispositivos Apple, manteniendo compatibilidad completa vía Bluetooth con Android. La batería entrega hasta 6 horas de escucha por carga y aproximadamente 24 horas de reproducción total con el estuche y carga rápida Fast Fuel.",
-    wompiLink: "",
+    wompiLink: "https://checkout.wompi.co/l/7g1yUD",
   },
   {
     id: 2,
@@ -86,7 +86,7 @@ const products: Product[] = [
     ],
     longDescription:
       "Beats Studio3 Wireless incorporan Pure Adaptive Noise Cancelling, que ajusta la cancelación de ruido en tiempo real para mantener un sonido equilibrado en todo el espectro. El chip Apple W1 proporciona conexión Bluetooth Clase 1 eficiente y estable, con hasta 22 horas de uso con ANC activado y hasta 40 horas en modo de bajo consumo, además de carga rápida Fast Fuel (10 minutos ≈ 3 horas de reproducción).",
-    wompiLink: "",
+    wompiLink: "https://checkout.wompi.co/l/O2HgZ3",
   },
   {
     id: 3,
@@ -113,7 +113,7 @@ const products: Product[] = [
     ],
     longDescription:
       "JBL Charge 5 ofrece el característico sonido JBL Original Pro mediante un driver de largo recorrido, tweeter independiente y radiadores pasivos para graves potentes. Su batería proporciona hasta 20 horas de reproducción continua y funciona como powerbank para cargar otros dispositivos por USB. El diseño IP67 lo hace resistente al agua y al polvo, e incluye PartyBoost para enlazar varios parlantes JBL compatibles y ampliar el sistema de sonido.",
-    wompiLink: "",
+    wompiLink: "https://checkout.wompi.co/l/PQPe8E",
   }
 ];
 
